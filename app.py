@@ -7,6 +7,7 @@ import pickle
 import base64
 import plotly.express as px
 from streamlit_option_menu import option_menu
+from streamlit_image_select import image_select
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 import warnings
 warnings.filterwarnings("ignore")
