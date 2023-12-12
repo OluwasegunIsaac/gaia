@@ -122,13 +122,33 @@ def  main():
             st.image("images/cover.png")
             st.info("""Welcome to **gaia**, your ultimate companion in Predicting and visualizing soil microbial biodiversity.""") 
             st.info("""Our cutting-edge AI-powered dashboard **(gaia)** leverages Artificial Intelligence / Machine Learning methods, advanced geographic visualization and analysis to provide accurate predictions and develop a deeper understanding of the role of the soil microbiome to contribute to soil health. We used the Land Use / Cover Area frame statistical Survey Soil (LUCAS Soil) dataset obtained from the Joint Research Centre European Soil Data Centre (ESDAC) in collaboration with the AI4LS Virtual hackathon series, to develop a multi-tiered dashboard that can predict and visualize soil microbial (bacterial and fungal) biodiversity, establish relationships between different soil condition predictors and features through statistical analytic approaches, and generate hypothesis about soil health condition drivers. We also incorporated the elaborate Global Soil Mycobiome consortium (GSMc) dataset, to boost the model prediction of soil fungal richness and biodiversity.""")
-            st.info("""Developed by **Daramola Oluwasegun, Akomolafe Ayobami, Adedeji Roqeeb,** and **Agboeze Tochukwu** using the LUCAS dataset as part of the AI4LS Challenge #1 and the GSMc dataset.""")
-            st.markdown('''[![Github Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/OluwasegunIsaac)''')
+            st.info("""Developed by **Daramola Oluwasegun, Akomolafe Ayobami, Adedeji Roqeeb,** and **Agboeze Tochukwu** using the LUCAS dataset as part of the[AI4LS Challenge #1](https://ai4lifesciences.com/) and the GSMc dataset.""")
+            st.markdown('''[![Github Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/OluwasegunIsaac/gaia)''')
             st.markdown("<br>",unsafe_allow_html=True)
 
-            
+       image_path = 'images/heatmap.png'
+        st.image(image_path, caption='Heatmap of sample collection points across Europe', use_column_width=True)
 
+        text = '''
+        ---
+        '''
 
+        st.markdown(text)
+
+        gallery_placeholder = st.empty()
+        
+        with gallery_placeholder.container():
+            img = image_select(
+            label="LUCAS Point photos: The world’s largest and most comprehensive, harmonized continental-scale soil databases",
+            images=[
+                "images/a.jpg", "images/b.jpg","images/c.jpg", "images/d.jpg",
+            ],
+            captions=["Wetland",
+                      "Woodland",
+                      "Bareland",
+                      "Cropland"],
+            use_container_width=True
+            )               
 
     
     if testing == "Data Summary":
