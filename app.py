@@ -126,7 +126,7 @@ def  main():
             st.markdown('''[![Github Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/OluwasegunIsaac/gaia)''')
             st.markdown("<br>",unsafe_allow_html=True)
 
-       image_path = 'images/heatmap.png'
+        image_path = 'images/heatmap.png'
         st.image(image_path, caption='Heatmap of sample collection points across Europe', use_column_width=True)
 
         text = '''
