@@ -5,6 +5,7 @@ import os
 import joblib
 import pickle
 import base64
+import plotly.express as px
 from streamlit_option_menu import option_menu
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 import warnings
@@ -113,17 +114,8 @@ def  main():
     #Home message
     if testing == "Home":
         
-        st.markdown("""
-        <style>
-        [data-testid="stSidebar"] {
-            background-color: #C6CDC7;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-        
-        #st.markdown('<h1 class="title">gaia</h1>', unsafe_allow_html=True)
         st.image("images/cover.png")
-        st.markdown('''[![Github Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/OluwasegunIsaac)''')
+        st.markdown('''[![Github Repo](https://badgen.net/badge/icon/GitHub?icon=github&label)](https://github.com/OluwasegunIsaac/gaia)''')
         st.markdown("<br>",unsafe_allow_html=True)    
         
         with st.sidebar:
@@ -142,13 +134,44 @@ def  main():
     if testing == "Data Summary":
         st.title('LUCAS Exploratory Analysis')
 
-        #st.markdown('<h1 style="font-size:24px;">xxx</h1>', unsafe_allow_html=True)
-        #image_path = 'fun_tax_div.jpg'
-        #st.image(image_path, use_column_width=True)
+        import plotly.express as px
+
+        bacteria = pd.read_csv('taxonomy/bac_tax_div.csv')
+        fungi = pd.read_csv('taxonomy/fun_tax_div.csv')
+
+        st.markdown('<h1 style="font-size:24px;">Taxonomy Diversity of the 2018 LUCAS Bacterial sequenced samples</h1>', unsafe_allow_html=True)
+        bacteria['Normalize_totalK'] = bacteria.groupby('Phylum')['totalK'].transform(lambda x: x / x.sum())
+
+        fig = px.treemap(bacteria, path=['Phylum', 'Class', 'Order'], values='Normalize_totalK')
+        st.plotly_chart(fig, use_container_width=True)
+
+        top5_Phyla = 5
+        top_Phyla = bacteria.sort_values('totalK', ascending=False).head(top5_Phyla)
+
+        fig = px.treemap(top_Phyla, path=['Phylum'], values='totalK',title=f'Top 5 Bacteria Phyla by Diversity')
+        st.plotly_chart(fig, use_container_width=True)
+
+
+        text = '''
+        ---
+        '''
+
+        st.markdown(text)
+
         
-        #st.markdown('<h1 style="font-size:24px;">xxx</h1>', unsafe_allow_html=True)
-        #image_path = 'bac_tax_div.jpg'
-        #st.image(image_path, use_column_width=True)
+        st.markdown('<h1 style="font-size:24px;">Taxonomy Diversity of the 2018 LUCAS Fungal sequenced samples </h1>', unsafe_allow_html=True)
+        fungi['Normalize_totalK'] = fungi.groupby('Phylum')['totalK'].transform(lambda x: x / x.sum())
+
+        fig = px.treemap(fungi, path=['Phylum', 'Class', 'Order'], values='Normalize_totalK')
+        st.plotly_chart(fig, use_container_width=True)
+
+        top5_Phyla = 5
+        top_Phyla = fungi.sort_values('totalK', ascending=False).head(top5_Phyla)
+
+        fig = px.treemap(top_Phyla, path=['Phylum'], values='totalK',title=f'Top 2 Fungi Phyla by Diversity')
+        st.plotly_chart(fig, use_container_width=True)
+
+
 
 
     if testing == "Visualization":
@@ -207,7 +230,7 @@ def  main():
         '''
         st.markdown(text)
 
-        st.markdown('<h1 style="font-size:24px;">Physiochemical properties by Land Management of the LUCAS 2018 data</h1>', unsafe_allow_html=True)
+        st.markdown('<h1 style="font-size:24px;">Physiochemical properties by Land Management of the LUCAS 2015 and 2018 data</h1>', unsafe_allow_html=True)
         file_ = open("gifs/land_man1.gif", "rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
