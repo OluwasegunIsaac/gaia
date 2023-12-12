@@ -296,7 +296,7 @@ def  main():
         st.markdown('<h1 style="font-size:24px;">Comparison of MAE scores of models predicting Soil Carbon Storage</h1>', unsafe_allow_html=True)
         st.table(df)
         st.write("""
-       **INFERENCE:** XXXXXXXXXXX
+       **INFERENCE:** The impact of incorporating microbial diversity features varies among the models. For Random Boost, Gradient Boost, and Decision Tree, there is no clear improvement with microbial diversity features, this is further explained with the feature importance image, that shows that the main parameter in the prediction of soil carbon storage is the Nitrogen content. However, for Xg Boost and Cat Boost, there is a slight degradation in performance when including microbial diversity features.
        """)
 
 
@@ -598,21 +598,7 @@ def  main():
                     
                     import plotly.express as px
                     fig = px.pie(values=values, names=label, title="Predicted Trophic Mode Distribution")
-                    st.plotly_chart(fig, use_container_width=True)
-
-
-
-                
-                st.markdown("""
-                <style>
-                [data-testid="stSidebar"] {
-                background-color: #C6CDC7;
-                }
-                </style>
-                """, unsafe_allow_html=True)
-                
-
-                
+                    st.plotly_chart(fig, use_container_width=True)                
                 
                 
 
@@ -622,12 +608,6 @@ def  main():
             st.info("""The GSMc dataset is available [here](https://doi.plutof.ut.ee/doi/10.15156/BIO/2263453)""")
             st.info("""Citation: Tedersoo, Leho (2021): The Global Soil Mycobiome consortium dataset for boosting fungal diversity research v2. University of Tartu. 10.15156/BIO/226345.""")
             
-            
-
-        
-        
-        
-
         
    
         
