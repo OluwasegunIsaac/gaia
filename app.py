@@ -7,7 +7,6 @@ import pickle
 import base64
 import plotly.express as px
 from streamlit_option_menu import option_menu
-from streamlit_image_select import image_select
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 import warnings
 warnings.filterwarnings("ignore")
@@ -130,27 +129,8 @@ def  main():
         image_path = 'images/heatmap.png'
         st.image(image_path, caption='Heatmap of sample collection points across Europe', use_column_width=True)
 
-        text = '''
-        ---
-        '''
 
-        st.markdown(text)
-
-        gallery_placeholder = st.empty()
-        
-        with gallery_placeholder.container():
-            img = image_select(
-            label="LUCAS Point photos: The world’s largest and most comprehensive, harmonized continental-scale soil databases",
-            images=[
-                "images/a.jpg", "images/b.jpg","images/c.jpg", "images/d.jpg",
-            ],
-            captions=["Wetland",
-                      "Woodland",
-                      "Bareland",
-                      "Cropland"],
-            use_container_width=True
-            )               
-
+       
     
     if testing == "Data Summary":
         st.title('LUCAS Microbiome Exploratory Analysis')
