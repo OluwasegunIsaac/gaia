@@ -1,5 +1,6 @@
 streamlit
 streamlit-option-menu
+streamlit-image-select
 pandas
 numpy
 scikit-learn==1.2.2
