@@ -132,7 +132,7 @@ def  main():
 
     
     if testing == "Data Summary":
-        st.title('LUCAS Exploratory Analysis')
+        st.title('LUCAS Microbiome Exploratory Analysis')
 
         import plotly.express as px
 
