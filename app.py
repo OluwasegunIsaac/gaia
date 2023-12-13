@@ -443,7 +443,7 @@ def  main():
                 
                 with st.expander('Model Output'):
             
-                    st.dataframe(pd.DataFrame({'Label':['Land Class', 'Soil Class', 'Fungal Abundance*', 'Fungal Richness**', 'Bacteria Abundance*', 'Bacterial Richness**'],\
+                    st.dataframe(pd.DataFrame({'Label':['Land Class', 'Soil Class', 'Fungal Abundance*', 'Fungal Richness**', 'Bacterial Abundance*', 'Bacterial Richness**'],\
                               'Values': [man_prediction_, env_prediction, rich_, abund, bact_abund, bact_rich]}))
                 st.write("""
                 ***Abundance:** The total weighted concentration/abundance of microbiome ooccurence in sample
