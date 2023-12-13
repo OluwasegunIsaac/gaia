@@ -66,7 +66,7 @@ Navigate to each directory and execute the analysis.sh files. Before running, re
 ## Info
 
 We used the files available from ENA because the AWS bucket will be shut down soon.
-to get the AWS bucket links check the AWS_bucket_links.sh to see the download scripts
+To get the AWS bucket links check the AWS_bucket_links.sh to see the download scripts
 
 ![newplot](https://github.com/OluwasegunIsaac/gaia/assets/102333264/fa3c3b51-94d3-4c21-91e4-ee72c389c89d)
 
