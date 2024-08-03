@@ -52,7 +52,7 @@ In each directory, use the following command to download the files specified in 
 
 bash
 Copy code
-		wget -i *download_links.txt
+		wget  -i *download_links.txt
 
 Check to ensure that all the necessary files have been successfully downloaded.
 
