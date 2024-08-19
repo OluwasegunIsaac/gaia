@@ -23,7 +23,7 @@ The following packages are imported in the code:
 # Datasets
 The raw dataests used for this projects are:
 - The Land Use / Cover Area frame statistical Survey Soil (LUCAS Soil) dataset which is a European Union effort to survey European topsoil characteristics and Microbiome sequence data from the LUCAS Soil Survey for prokaryotes, fungi, and microeukaryotes. Avalaible here: https://esdac.jrc.ec.europa.eu/projects/lucas
-- The global soil fungal dataset of the Global Soil Mycobiome consortium (GSMc), which comprises 722,682 fungal operational taxonomic units (OTUs) from 3200 plots in 108 countries on all continents. The OTUs are taxonomically and functionally assigned to guilds and other functional groups. Available here: https://doi.plutof.ut.ee/doi/10.15156/BIO/2263453
+- The global soil fungal dataset of the Global Soil Mycobiome consortium (GSMc), which comprises 722,682 fungal operational taxonomic units (OTUs) from 3200 plots in 108 countries on all continents. The OTUs are taxonomically and functionally assigned to guilds and other functional groups. Available here: https://doi.plutof.ut.ee/doi/10.15156/BIO/2263453.
 
 # Microbiome Bioinformatics Analysis
 ## Steps to Run the Analysis
